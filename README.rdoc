@@ -1,7 +1,19 @@
 == Shared Learning Collaborative integration in a Rails App
-
 This is an exmaple of how to use the omniauth-slc gem to authenticate with SLC API,
 and then use the HTPParty gem to make request to the API.
+
+It uses some of the strategies in Ryan Bate's Railscast #241 Simple OmniAuth: http://railscasts.com/episodes/241-simple-omniauth.
+
+=== Bugs
+This was done quickly and is not perfect.  If you notice a big, please submit an issue, or even better, fix it and submit a Pull Request.
+=== Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
 
 
 
