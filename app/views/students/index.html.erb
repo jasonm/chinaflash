@@ -1,0 +1,7 @@
+<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= link_to "Sign Out", signout_path %>
+  <p><%= @slc_request %>
+<% else %>
+  <%= link_to "Sign in with Slc", "/auth/slc" %>
+<% end %>
