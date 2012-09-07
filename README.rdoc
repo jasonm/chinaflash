@@ -2,6 +2,8 @@
 This is an exmaple of how to use the omniauth-slc gem to authenticate with SLC API,
 and then use the HTPParty gem to make request to the API.
 
+To set up a sandbox enviroment for SLC, follow this video: http://www.youtube.com/watch?v=wEcG4ef2748
+
 It uses some of the strategies in Ryan Bate's Railscast #241 Simple OmniAuth: http://railscasts.com/episodes/241-simple-omniauth.
 
 === Bugs
