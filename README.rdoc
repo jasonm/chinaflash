@@ -7,7 +7,7 @@ To set up a sandbox enviroment for SLC, follow this video: http://www.youtube.co
 It uses some of the strategies in Ryan Bate's Railscast #241 Simple OmniAuth: http://railscasts.com/episodes/241-simple-omniauth.
 
 === Bugs
-This was done quickly and is not perfect.  If you notice a big, please submit an issue, or even better, fix it and submit a Pull Request.
+This was done quickly and is not perfect.  If you notice a bug, please submit an issue, or even better, fix it and submit a Pull Request.
 === Contributing
 
 1. Fork it
