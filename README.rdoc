@@ -1,6 +1,6 @@
 == Shared Learning Collaborative integration in a Rails App
 This is an exmaple of how to use the omniauth-slc gem to authenticate with SLC API,
-and then use the HTPParty gem to make request to the API.
+and then use the HTTParty gem to make request to the API.
 
 To set up a sandbox enviroment for SLC, follow this video: http://www.youtube.com/watch?v=wEcG4ef2748
 
