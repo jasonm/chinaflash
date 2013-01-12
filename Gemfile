@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 
 gem 'omniauth-slc', '0.0.2'
 gem 'httparty'
