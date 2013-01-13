@@ -18,13 +18,12 @@
   <footer class="row">
   <hr>
     <p>&copy; ChinaFlash 2013</p>
-    <%# if signed_in? %>
-    <!--
+    <% if signed_in? %>
       <section>
-      <a href="/sign_out">Sign Out</a>
+        <p>Signed in as teacher local id #<%= current_teacher.try(:id) %></p>
+        <a href="/sign_out">Sign Out</a>
       </section>
-    -->
-    <%# end %>
+    <% end %>
   </footer>
 </div>
 
