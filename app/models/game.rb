@@ -1,5 +1,5 @@
 class Game < ActiveRecord::Base
-  NUMBER_OF_ROUNDS = 9
+  NUMBER_OF_ROUNDS = 5
   ROUND_LENGTH_IN_SECONDS = 20
 
   has_many :participations
