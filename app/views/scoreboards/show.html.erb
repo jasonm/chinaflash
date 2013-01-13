@@ -9,9 +9,20 @@
     <h1>Game is in play!</h1>
     <h2>Round <%= current_game.current_round_number %> / <%= current_game.number_of_rounds %>.</h2>
     <h2><%= current_game.interval %> seconds per round</h2>
-    <% content_for :head_tags do %>
-      <meta http-equiv="refresh" content="2">
+
+    <% refresh_seconds = 2 %>
+
+    <% if params[:play_gong] %>
+      <% refresh_seconds = 6 %>
+      <audio autoplay>
+        <source src="/sounds/gong.m4a" type="audio/mpeg">
+      </audio>
     <% end %>
+
+    <% content_for :head_tags do %>
+      <meta http-equiv="refresh" content="<%= refresh_seconds %>;<%= scoreboard_url(round_number: params[:round_number]) %>">
+    <% end %>
+
   <% end %>
 <% end %>
 
