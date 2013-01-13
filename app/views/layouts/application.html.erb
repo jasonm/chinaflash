@@ -23,6 +23,7 @@
       <section>
         <p>Signed in as teacher local id #<%= current_teacher.try(:id) %></p>
         <a href="/sign_out">Sign Out</a>
+        <p>Debug token: <%= session[:token] %></p>
       </section>
     <% end %>
   </footer>
