@@ -14,7 +14,7 @@ Student.delete_all
 Section.delete_all
 
 Section.create({
-  name: 'Chinese 101',
+  name: 'Chinese 101 - 2 Students',
   state_id: 1001,
   students: [
     Student.create(first_name: 'Jason', last_name: 'Morrison', state_id: 2001),
@@ -23,7 +23,7 @@ Section.create({
 })
 
 Section.create({
-  name: 'Chinese 202',
+  name: 'Chinese 202 - 6 Students',
   state_id: 1002,
   students: [
     Student.create(first_name: 'Laurilee',   last_name: 'L',     state_id: 2003),
@@ -31,7 +31,7 @@ Section.create({
     Student.create(first_name: 'Jiani',      last_name: 'W',      state_id: 2005),
     Student.create(first_name: 'Dee',        last_name: 'M',    state_id: 2006),
     Student.create(first_name: 'Franco',     last_name: 'F',      state_id: 2007),
-    Student.create(first_name: 'BJ',         last_name: 'W', state_id: 2008)
+    Student.create(first_name: 'Consuelo',   last_name: 'G',    state_id: 2008)
   ]
 })
 
