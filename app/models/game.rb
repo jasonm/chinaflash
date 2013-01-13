@@ -1,6 +1,6 @@
 class Game < ActiveRecord::Base
   NUMBER_OF_ROUNDS = 5
-  ROUND_LENGTH_IN_SECONDS = 5
+  ROUND_LENGTH_IN_SECONDS = 10
 
   has_many :participations
   has_many :students, through: :participations
@@ -14,6 +14,9 @@ class Game < ActiveRecord::Base
 
   validate :enough_cards_for_students
 
+  def scores
+    rounds.map { |r| r.matchups }.flatten.map { |m| m.scores }.flatten
+  end
 
   def matchup_for_student(student)
     if round = current_round

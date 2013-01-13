@@ -3,6 +3,7 @@ class Matchup < ActiveRecord::Base
   belongs_to :student2, class_name: 'Student'
   belongs_to :card
   belongs_to :round
+  has_many :scores
 
   attr_accessible :student1, :student2, :card
 end

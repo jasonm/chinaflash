@@ -17,6 +17,7 @@ SlcSample2::Application.routes.draw do
   # game phase
   resources :scoreboards, only: %w(show)
   resource :current_matchup, only: %w(show) # keyed by session
+  resources :scores, only: %w(create)
 
   # etc
   match 'sign_out' => 'sessions#destroy', :as => :sign_out
