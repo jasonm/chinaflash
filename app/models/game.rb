@@ -1,6 +1,6 @@
 class Game < ActiveRecord::Base
-  NUMBER_OF_ROUNDS = 10
-  ROUND_LENGTH_IN_SECONDS = 10
+  NUMBER_OF_ROUNDS = 9
+  ROUND_LENGTH_IN_SECONDS = 20
 
   has_many :participations
   has_many :students, through: :participations

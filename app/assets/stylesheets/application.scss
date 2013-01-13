@@ -80,3 +80,59 @@ table.scoreboard {
     color: #600;
   }
 }
+
+@media (max-width: 1200px) { /* phones */
+  body.role_selection-show {
+
+    h1 {
+      font-size: 72px;
+      line-height: 150%;
+    }
+    p {
+      font-size: 48px;
+      line-height: 150%;
+    }
+    a.btn {
+      font-size: 64px;
+      padding-top: 50px;
+      margin-bottom: 10px;
+      width: 100%;
+      min-height: 80px;
+    }
+  }
+
+  body.participation_acceptances-new {
+
+    label, input {
+      font-size: 42px;
+      line-height: 150%;
+    }
+
+    input {
+      min-height: 60px;
+    }
+
+    button.btn {
+      font-size: 42px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      margin-bottom: 10px;
+      width: 100%;
+      min-height: 50px;
+    }
+  }
+  body.current_matchups-show {
+    * { color: red !important; }
+    h3.answer-text, h3.hint-text {
+      font-size: 48px;
+    }
+    a.btn {
+      font-size: 42px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      margin-bottom: 10px;
+      width: 80%;
+      min-height: 50px;
+    }
+  }
+}
