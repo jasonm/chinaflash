@@ -11,6 +11,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.create(params[:game])
+    session[:game_id] = @game.id
     redirect_to connecting_game_url(@game)
   end
 end

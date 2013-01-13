@@ -1,0 +1,10 @@
+<h1>Join game</h1>
+
+<%= form_tag(participation_acceptances_path, method: 'post') %>
+  <%= label_tag :shortcode, "Shortcode (upper or lowercase):" %>
+  <input name="participation_acceptance[shortcode]" id="shortcode" type="text" >
+
+  <div class='form-actions'>
+    <%= button_tag 'Join the game', :class => 'btn btn-primary btn-success' %>
+  </div>
+</form>

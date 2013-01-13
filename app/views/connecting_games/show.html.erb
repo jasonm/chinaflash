@@ -13,3 +13,16 @@
     <% end %>
   </p>
 <% end %>
+
+
+<% if params[:refresh] %>
+  <div class="waiting">
+    <%= image_tag 'spinner.gif' %>
+  </div>
+  <% content_for :head_tags do %>
+    <meta http-equiv="refresh" content="2">
+  <% end %>
+<% else %>
+  <%= link_to "Refresh Live", connecting_game_path(@game.id, refresh: true), class: 'btn btn-primary' %>
+<% end %>
+

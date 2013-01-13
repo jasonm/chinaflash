@@ -12,6 +12,10 @@ class Game < ActiveRecord::Base
     [Card.new(), Card.new()]
   end
 
+  def all_connected?
+    participations.all?(&:connected?)
+  end
+
   private
 
   def create_participations

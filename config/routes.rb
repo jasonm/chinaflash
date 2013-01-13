@@ -12,6 +12,12 @@ SlcSample2::Application.routes.draw do
 
   # connection phase
   resources :connecting_games, only: %w(show)
+  resources :participation_acceptances, only: %w(new create)
+
+  # game phase
+  resources :scoreboards, only: %w(show)
+  resource :current_matchup, only: %w(show) # keyed by session
+
   # etc
   match 'sign_out' => 'sessions#destroy', :as => :sign_out
 end

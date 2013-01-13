@@ -8,6 +8,15 @@ class Participation < ActiveRecord::Base
 
   before_validation :set_shortcode, on: :create
 
+  def connected?
+    connected_at.present?
+  end
+
+  def connect!
+    self.connected_at = Time.now
+    save!
+  end
+
   private
 
   def set_shortcode
