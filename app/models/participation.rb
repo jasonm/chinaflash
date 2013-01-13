@@ -20,6 +20,6 @@ class Participation < ActiveRecord::Base
   private
 
   def set_shortcode
-    self.shortcode = Digest::MD5.hexdigest(Time.now.to_f.to_s + student_id.to_s + game_id.to_s + "salt")[0..5].upcase
+    self.shortcode = (1..5).map { (1..9).to_a.shuffle.first.to_s }.join
   end
 end
