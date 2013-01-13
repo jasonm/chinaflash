@@ -37,8 +37,12 @@ class Game < ActiveRecord::Base
   end
 
   def current_round_number
-    elapsed_time = Time.now - self.started_at
-    round_number = (elapsed_time / ROUND_LENGTH_IN_SECONDS).to_i
+    if started?
+      elapsed_time = Time.now - self.started_at
+      round_number = (elapsed_time / ROUND_LENGTH_IN_SECONDS).to_i
+    else
+      0
+    end
   end
 
   def all_connected?
