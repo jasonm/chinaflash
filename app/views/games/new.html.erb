@@ -10,7 +10,7 @@
   <select name="game[section_id]" id="section-id" class="select-chosen" data-placeholder="Your sections" style="width:350px;" tabindex="1">
     <% @sections.each do |section| %>
       <option value="<%= section.id %>">
-        <%= section.name %>
+        <%= section.name %> - <%= pluralize(section.students.count, 'student') %>
       </option>
     <% end %>
   </select>
