@@ -1,5 +1,5 @@
 class SectionImporter
-  SECTION_SIZE_LIMIT = ENV['SECTION_SIZE_LIMIT'].to_i || 6
+  SECTION_SIZE_LIMIT = 6
 
   def initialize(api_token, teacher)
     @api_token = api_token
