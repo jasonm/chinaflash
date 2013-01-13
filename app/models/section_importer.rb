@@ -24,6 +24,7 @@ class SectionImporter
   def raw_section_hashes
     api = SlcApi.new(@api_token)
     api.sections
+    # TODO: Use mult
     api.sections.map do |section|
       {
         'id' => section['id'],
