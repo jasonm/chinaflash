@@ -6,16 +6,27 @@ To set up a sandbox enviroment for SLC, follow this video: http://www.youtube.co
 
 It uses some of the strategies in Ryan Bate's Railscast #241 Simple OmniAuth: http://railscasts.com/episodes/241-simple-omniauth.
 
-=== Bugs
-This was done quickly and is not perfect.  If you notice a bug, please submit an issue, or even better, fix it and submit a Pull Request.
-=== Contributing
+=== Development
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Ensure you have postgresql.
 
+Install gem deps:
 
+  bundle
 
+Then:
 
+  rake db:create db:migrate
+
+Create a .env file with:
+
+  SLC_KEY=QQQQaaa123
+  SLC_SECRET=GGGGGGGGGGGGGG11111111111111222222222222223333aa
+
+Then:
+
+  foreman start
+
+or:
+
+  rails server
