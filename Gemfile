@@ -6,6 +6,7 @@ gem 'omniauth-slc', '0.0.2'
 gem 'httparty'
 gem 'thin'
 gem 'pg'
+gem 'dynamic_form'
 
 gem 'jquery-rails'
 gem 'bootstrap-sass'

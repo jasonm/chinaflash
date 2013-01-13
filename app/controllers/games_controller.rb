@@ -5,7 +5,12 @@ class GamesController < ApplicationController
       return
     end
 
-    # this is for teachers
-    # if not oauthed, redirect through omniauth-slc
+    @sections = Section.all
+    @game = Game.new
+  end
+
+  def create
+    @game = Game.create(params[:game])
+    redirect_to connecting_game_url(@game)
   end
 end

@@ -1,1 +1,32 @@
 <h1>New game</h1>
+
+
+<%= form_for(@game) do |form| %>
+  <%= form.error_messages %>
+
+  <legend>Which class is playing?</legend>
+
+  <%= form.label :section_id, "Choose a class section" %>
+  <select name="game[section_id]" id="section-id" class="select-chosen" data-placeholder="Your sections" style="width:350px;" tabindex="1">
+    <option value=""></option>
+    <% @sections.each do |section| %>
+      <option value="<%= section.id %>">
+        <%= section.name %>
+      </option>
+    <% end %>
+  </select>
+
+  <div class='form-actions'>
+    <%= form.button 'Start the game', :class => 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    //<![CDATA[
+      $(function() {
+        $('select.select-chosen').chosen({ search_contains: true });
+      });
+    //]]>
+  </script>
+<% end %>

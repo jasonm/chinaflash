@@ -10,6 +10,8 @@ SlcSample2::Application.routes.draw do
   # game creation phase
   resources :games, only: %w(new create)
 
+  # connection phase
+  resources :connecting_games, only: %w(show)
   # etc
   match 'sign_out' => 'sessions#destroy', :as => :sign_out
 end

@@ -50,6 +50,7 @@ GEM
       debugger-ruby_core_source (>= 1.1.1)
     debugger-ruby_core_source (1.1.6)
     dotenv (0.4.0)
+    dynamic_form (1.1.4)
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -164,6 +165,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 3.2.1)
   dotenv
+  dynamic_form
   httparty
   jquery-rails
   omniauth-slc (= 0.0.2)
