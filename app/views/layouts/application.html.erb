@@ -8,7 +8,27 @@
 </head>
 <body>
 
-<%= yield %>
+<body class="<%= body_class %>">
+
+<div class="container">
+  <%= render partial: 'shared/flashes' %>
+  <%= yield %>
+
+
+  <footer class="row">
+  <hr>
+    <p>&copy; ChinaFlash 2013</p>
+    <%# if signed_in? %>
+    <!--
+      <section>
+      <a href="/sign_out">Sign Out</a>
+      </section>
+    -->
+    <%# end %>
+  </footer>
+</div>
+
+<%= javascript_include_tag "application" %>
+<%= yield :javascript %>
 
 </body>
-</html>
