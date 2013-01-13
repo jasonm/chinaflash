@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113175233) do
+ActiveRecord::Schema.define(:version => 20130113211752) do
 
   create_table "cards", :force => true do |t|
     t.datetime "created_at",  :null => false
@@ -74,18 +74,18 @@ ActiveRecord::Schema.define(:version => 20130113175233) do
 
   create_table "sections", :force => true do |t|
     t.string   "name"
-    t.integer  "state_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "state_id",   :limit => 256
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "students", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "state_id"
+    t.string   "state_id",   :limit => 256
     t.integer  "section_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "teachers", :force => true do |t|
