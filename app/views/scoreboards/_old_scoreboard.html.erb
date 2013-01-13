@@ -1,0 +1,15 @@
+<h3>Cards</h3>
+<p><strong><%= current_game.cardset.name %></strong></p>
+<% current_game.cardset.cards.each do |card| %>
+  <p><%= card.hint_text %>: <%= card.answer_text %></p>
+<% end %>
+
+<h3>Players</h3>
+<% current_game.participations.each do |participation| %>
+  <p><%= participation.student.full_name %></p>
+<% end %>
+
+<h3>Scores</h3>
+<% current_game.scores.each do |score| %>
+  <p><%= score.student.full_name %> correctly knew <%= score.matchup.card.hint_text %></p>
+<% end %>

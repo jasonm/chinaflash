@@ -1,15 +1,13 @@
-<h1><%= @game.section.name %>: Game #<%= @game.id %></h2>
-
-<h2>Participation codes:</h2>
-
-<% @game.participations.each do |participation| %>
+<h1><%= @game.section.name %></h2>
+<h2>Game #<%= @game.id %></h2>
+<% @game.participations.sort_by(&:id).each do |participation| %>
   <p class="participation">
     <%= participation.student.first_name %> <%= participation.student.last_name %>:
     <span class="shortcode"><%= participation.shortcode %></span>
     <% if participation.connected_at %>
-      <span class="connected">Connected!</span>
+      <span class="connected text-success">Connected!</span>
     <% else %>
-      <span class="waiting">(Waiting for connection...)</span>
+      <span class="waiting text-warning">(Waiting...)</span>
     <% end %>
   </p>
 <% end %>

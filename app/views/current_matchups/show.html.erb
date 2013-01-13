@@ -3,14 +3,19 @@
     <div class="card-image"><%= image_tag @matchup.card.image_url %></div>
     <h3 class="answer-text"><%= @matchup.card.answer_text %></h3>
     <h3 class="hint-text"><%= @matchup.card.hint_text %></h3>
-    <%= link_to "#{ @other_student.first_name } is correct!", scores_path(score: { matchup_id: @matchup, student_id: @other_student, points: 1 }), method: 'post' %>
+    <%= link_to "#{ @other_student.first_name } is correct!", scores_path(score: { matchup_id: @matchup, student_id: @other_student, points: 1 }), method: 'post', class: 'btn btn-primary btn-success' %>
     <p>You vs <%= @other_student.full_name %> for round <%= @matchup.round.round_number %></p>
   </div>
   <% content_for :head_tags do %>
-    <meta http-equiv="refresh" content="1">
+    <meta http-equiv="refresh" content="3">
   <% end %>
 <% else %>
-  <h1>Waiting for everyone to join...</h1>
+  <% if current_game.current_round_number == 0 %>
+    <h1>Get ready...!</h1>
+  <% else %>
+    <h1>Waiting for everyone to join...</h1>
+  <% end %>
+
   <% content_for :head_tags do %>
     <meta http-equiv="refresh" content="1">
   <% end %>

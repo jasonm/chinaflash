@@ -2,25 +2,43 @@
   <h1>Game <%= current_game.id %> is complete!</h1>
   <%= link_to 'Start a new game...', new_game_path, class: 'btn btn-primary' %>
 <% else %>
-  <h1>Game <%= current_game.id %> is in play!</h1>
-  <h2>Round <%= current_game.current_round_number %></h2>
-  <% content_for :head_tags do %>
-    <meta http-equiv="refresh" content="1">
+  <% if current_game.current_round_number == 0 %>
+    <h1>Get ready...</h1>
+  <% else %>
+    <h1>Game <%= current_game.id %> is in play!</h1>
+    <h2>Round <%= current_game.current_round_number %></h2>
+    <% content_for :head_tags do %>
+      <meta http-equiv="refresh" content="5">
+    <% end %>
   <% end %>
 <% end %>
 
-<h3>Cards</h3>
-<p><strong><%= current_game.cardset.name %></strong></p>
-<% current_game.cardset.cards.each do |card| %>
-  <p><%= card.hint_text %>: <%= card.answer_text %></p>
-<% end %>
+<%#= render :partial => 'old_scoreboard' %>
 
-<h3>Players</h3>
-<% current_game.participations.each do |participation| %>
-  <p><%= participation.student.full_name %></p>
-<% end %>
+<h3>Scoreboard</h3>
+<table class="scoreboard">
+  <thead>
+    <tr>
+      <td>Student</td>
+      <% current_game.cardset.cards.count.times do %><td></td><% end %>
+    </tr>
+  </thead>
 
-<h3>Scores</h3>
-<% current_game.scores.each do |score| %>
-  <p><%= score.student.full_name %> correctly knew <%= score.matchup.card.hint_text %></p>
-<% end %>
+  <% current_game.participations.each do |participation| %>
+    <% student = participation.student %>
+
+    <tr class="score-row">
+      <td><%= student.full_name %></td>
+      <% current_game.cardset.cards.each do |card| %>
+        <td><%= current_game.scores.select { |score| score.student == student && score.matchup.card == card }.map(&:points).sum %></td>
+      <% end %>
+    </tr>
+  <% end %>
+
+  <tr>
+    <td>Words</td>
+    <% current_game.cardset.cards.each do |card| %>
+      <td class="image"><%= image_tag card.image_url %></td>
+    <% end %>
+  </tr>
+</table>

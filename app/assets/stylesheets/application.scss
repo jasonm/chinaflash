@@ -20,9 +20,35 @@ body {
   padding-bottom: 40px;
 }
 
+body.connecting_games-show {
+  p.participation {
+    font-size: 32px;
+    line-height: 200%;
+    span.shortcode {
+      font-weight: bold;
+      font-family: monospace;
+    }
+  }
+}
+
 body.current_matchups-show {
 
   div.card-image img {
     max-height: 160px;
+  }
+}
+
+table.scoreboard {
+  @extend .table-bordered, .table-striped;
+
+  font-size: 32px;
+  line-height: 150%;
+
+  tr.score-row {
+    font-weight: bold;
+  }
+
+  td.image img {
+    max-height: 50px;
   }
 }
