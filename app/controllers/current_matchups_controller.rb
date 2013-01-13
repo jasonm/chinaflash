@@ -1,7 +1,11 @@
 class CurrentMatchupsController < ApplicationController
   def show
-    @matchup = matchup
-    @other_student = other_student
+    if current_game.game_over?
+      render 'game_over'
+    elsif current_game.current_round
+      @matchup = matchup
+      @other_student = other_student
+    end
   end
 
   private
@@ -12,6 +16,6 @@ class CurrentMatchupsController < ApplicationController
   end
 
   def matchup
-    Matchup.for_student(current_student)
+    current_game.matchup_for_student(current_student)
   end
 end

@@ -10,7 +10,8 @@ class ParticipationAcceptancesController < ApplicationController
     else
       flash[:notice] = "Joining as #{student.first_name} #{student.last_name}!"
       participation.connect!
-      session[:student_id] = participation.student.id
+      session[:student_id] = participation.student_id
+      session[:game_id] = participation.game_id
       redirect_to current_matchup_url
     end
   end

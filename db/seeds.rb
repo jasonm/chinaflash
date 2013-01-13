@@ -27,7 +27,9 @@ Section.create({
   state_id: 1002,
   students: [
     Student.create(first_name: 'Amy',   last_name: 'Appleton',  state_id: 2003),
-    Student.create(first_name: 'Billy', last_name: 'Bobberton', state_id: 2004)
+    Student.create(first_name: 'Billy', last_name: 'Bobberton', state_id: 2004),
+    Student.create(first_name: 'Cory',  last_name: 'Coryton',   state_id: 2005),
+    Student.create(first_name: 'Danny', last_name: 'Danielson', state_id: 2006)
   ]
 })
 

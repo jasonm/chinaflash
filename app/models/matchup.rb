@@ -4,7 +4,5 @@ class Matchup < ActiveRecord::Base
   belongs_to :card
   belongs_to :round
 
-  def self.for_student(student)
-    self.where(student1_id: student).first || self.where(student2_id: student).first
-  end
+  attr_accessible :student1, :student2, :card
 end

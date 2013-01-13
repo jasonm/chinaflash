@@ -11,12 +11,17 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(params[:game])
-    @game.cardset = Cardset.first # TODO allow to choose
+
+    # TODO allow to choose
+    @game.number_of_rounds = Game::NUMBER_OF_ROUNDS
+    @game.interval = Game::ROUND_LENGTH_IN_SECONDS
+    @game.cardset = Cardset.first
 
     if @game.save
       session[:game_id] = @game.id
       redirect_to connecting_game_url(@game)
     else
+      @sections = Section.all
       render :new
     end
   end
