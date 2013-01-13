@@ -15,6 +15,8 @@ class Game < ActiveRecord::Base
   private
 
   def create_participations
-
+    section.students.each do |student|
+      participations.create(student: student)
+    end
   end
 end
