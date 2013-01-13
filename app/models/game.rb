@@ -3,14 +3,11 @@ class Game < ActiveRecord::Base
   has_many :students, through: :participations
   # has_many :rounds
   belongs_to :section
+  belongs_to :cardset
 
   attr_accessible :section_id
 
   after_create :create_participations
-
-  def cardset
-    [Card.new(), Card.new()]
-  end
 
   def all_connected?
     participations.all?(&:connected?)

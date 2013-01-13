@@ -10,8 +10,14 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.create(params[:game])
-    session[:game_id] = @game.id
-    redirect_to connecting_game_url(@game)
+    @game = Game.new(params[:game])
+    @game.cardset = Cardset.first # TODO allow to choose
+
+    if @game.save
+      session[:game_id] = @game.id
+      redirect_to connecting_game_url(@game)
+    else
+      render :new
+    end
   end
 end

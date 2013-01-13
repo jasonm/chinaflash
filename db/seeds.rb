@@ -1,3 +1,5 @@
+# encoding: utf-8
+# 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -7,6 +9,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 
+# slc data ----------------------------
 Student.delete_all
 Section.delete_all
 
@@ -27,3 +30,21 @@ Section.create({
     Student.create(first_name: 'Billy', last_name: 'Bobberton', state_id: 2004)
   ]
 })
+
+# cards ----------------------------
+Cardset.delete_all
+Card.delete_all
+
+Cardset.create({
+  name: 'First and only cardset',
+  cards: [
+    Card.create({ image_url: 'apple.png',  hint_text: 'Apple',  answer_text: 'Píngguǒ' }),
+    Card.create({ image_url: 'sun.png',    hint_text: 'Sun',    answer_text: 'Tàiyáng' }),
+    Card.create({ image_url: 'person.png', hint_text: 'Person', answer_text: 'Rén' }),
+    Card.create({ image_url: 'rice.png',   hint_text: 'Rice',   answer_text: 'Mǐ' }),
+  ]
+})
+
+# games ----------------------------
+Game.delete_all
+Participation.delete_all

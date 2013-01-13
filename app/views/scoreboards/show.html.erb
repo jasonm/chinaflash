@@ -1,0 +1,12 @@
+<h1>Game <%= current_game.id %> is in play!</h1>
+<h2>Cardset: <%= current_game.cardset.name %></h1>
+
+<h3>Cards</h3>
+<% current_game.cardset.cards.each do |card| %>
+  <p><%= card.hint_text %>: <%= card.answer_text %></p>
+<% end %>
+
+<h3>Players</h3>
+<% current_game.participations.each do |participation| %>
+  <p><%= participation.student.full_name %>
+<% end %>
