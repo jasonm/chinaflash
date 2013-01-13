@@ -40,7 +40,7 @@ Cardset.create({
   cards: [
     Card.create({ image_url: 'apple.png',  hint_text: 'Apple',  answer_text: 'Píngguǒ' }),
     Card.create({ image_url: 'sun.png',    hint_text: 'Sun',    answer_text: 'Tàiyáng' }),
-    Card.create({ image_url: 'person.png', hint_text: 'Person', answer_text: 'Rén' }),
+    Card.create({ image_url: 'cloud.png',  hint_text: 'Cloud',  answer_text: 'Yún' }),
     Card.create({ image_url: 'rice.png',   hint_text: 'Rice',   answer_text: 'Mǐ' }),
   ]
 })

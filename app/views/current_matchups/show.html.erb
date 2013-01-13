@@ -1,0 +1,6 @@
+<div class="card">
+  <div class="card-image"><%= image_tag @matchup.card.image_url %></div>
+  <h3 class="answer-text"><%= @matchup.card.answer_text %></h3>
+  <h3 class="hint-text"><%= @matchup.card.hint_text %></h3>
+  <p>You vs <%= @other_student.full_name %></p>
+</div>
