@@ -29,7 +29,10 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bootstrap-sass (2.2.2.0)
+      sass (~> 3.2)
     builder (3.0.4)
+    coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -37,7 +40,18 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    columnize (0.3.6)
+    daemons (1.1.9)
+    debugger (1.2.3)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.1.1)
+      debugger-ruby_core_source (~> 1.1.5)
+    debugger-linecache (1.1.2)
+      debugger-ruby_core_source (>= 1.1.1)
+    debugger-ruby_core_source (1.1.6)
+    dotenv (0.4.0)
     erubis (2.7.0)
+    eventmachine (1.0.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     faraday (0.8.4)
@@ -60,6 +74,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.1)
     mime-types (1.19)
     multi_json (1.5.0)
     multi_xml (0.5.1)
@@ -78,7 +93,20 @@ GEM
       omniauth (~> 1.0)
     omniauth-slc (0.0.2)
       omniauth-oauth2 (~> 1.1)
+    pg (0.14.1)
     polyglot (0.3.3)
+    pry (0.9.10)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.3.1)
+    pry-debugger (0.2.1)
+      debugger (~> 1.2.0)
+      pry (~> 0.9.10)
+    pry-rails (0.2.2)
+      pry (>= 0.9.10)
+    pry-remote (0.1.6)
+      pry (~> 0.9)
+      slop (~> 3.0)
     rack (1.4.3)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -109,12 +137,16 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    slop (3.3.3)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sqlite3 (1.3.6)
+    thin (1.5.0)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.16.0)
     tilt (1.3.3)
     treetop (1.4.12)
@@ -129,11 +161,18 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   coffee-rails (~> 3.2.1)
+  dotenv
   httparty
   jquery-rails
   omniauth-slc (= 0.0.2)
+  pg
+  pry
+  pry-debugger
+  pry-rails
+  pry-remote
   rails (= 3.2.11)
   sass-rails (~> 3.2.3)
-  sqlite3
+  thin
   uglifier (>= 1.0.3)
