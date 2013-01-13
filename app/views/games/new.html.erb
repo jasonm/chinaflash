@@ -8,7 +8,6 @@
 
   <%= form.label :section_id, "Choose a class section" %>
   <select name="game[section_id]" id="section-id" class="select-chosen" data-placeholder="Your sections" style="width:350px;" tabindex="1">
-    <option value=""></option>
     <% @sections.each do |section| %>
       <option value="<%= section.id %>">
         <%= section.name %>
