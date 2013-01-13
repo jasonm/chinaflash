@@ -3,7 +3,9 @@
     <div class="card-image"><%= image_tag @matchup.card.image_url %></div>
     <h3 class="answer-text"><%= @matchup.card.answer_text %></h3>
     <h3 class="hint-text"><%= @matchup.card.hint_text %></h3>
-    <%= link_to "They got it right!", scores_path(score: { matchup_id: @matchup, student_id: @other_student, points: 1 }), method: 'post', class: 'btn btn-primary btn-success' %>
+    <% if ! Score.exists?(matchup_id: @matchup, student_id: @other_student) %>
+      <%= link_to "They got it right!", scores_path(score: { matchup_id: @matchup, student_id: @other_student, points: 1 }), method: 'post', class: 'btn btn-primary btn-success' %>
+    <% end %>
     <p class="muted">You vs <%= @other_student.full_name %> for round <%= @matchup.round.round_number %></p>
   </div>
   <% content_for :head_tags do %>
@@ -11,7 +13,7 @@
   <% end %>
 <% else %>
   <% if current_game.current_round_number == 0 %>
-    <h1>Get ready...!</h1>
+    <h1>Get ready...</h1>
   <% else %>
     <h1>Waiting for everyone to join...</h1>
   <% end %>
