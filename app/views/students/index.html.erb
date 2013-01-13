@@ -1,7 +1,9 @@
 <% if current_user %>
-  Welcome <%= current_user.name %>!
+  Welcome <%#= current_user.name %>!
   <%= link_to "Sign Out", signout_path %>
-  <p><%= @slc_request %>
+  TOKEN: <code><%= session[:token] %></code>
+
+  <pre><code><%== @slc_request.inspect %></code></pre>
 <% else %>
   <%= link_to "Sign in with Slc", "/auth/slc" %>
 <% end %>
