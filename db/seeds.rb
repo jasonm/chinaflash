@@ -38,12 +38,18 @@ Cardset.delete_all
 Card.delete_all
 
 Cardset.create({
-  name: 'First and only cardset',
+  name: 'Chinese Fruits',
   cards: [
-    Card.create({ image_url: 'apple.png',  hint_text: 'Apple',  answer_text: 'Píngguǒ' }),
-    Card.create({ image_url: 'sun.png',    hint_text: 'Sun',    answer_text: 'Tàiyáng' }),
-    Card.create({ image_url: 'cloud.png',  hint_text: 'Cloud',  answer_text: 'Yún' }),
-    Card.create({ image_url: 'rice.png',   hint_text: 'Rice',   answer_text: 'Mǐ' }),
+    Card.create({ image_url: 'apple.jpg',       hint_text: 'Apple',       answer_text: 'Píngguǒ' }),
+    Card.create({ image_url: 'banana.jpg',      hint_text: 'Banana',      answer_text: 'Xiang Jiao' }),
+    Card.create({ image_url: 'kiwi.jpg',        hint_text: 'Kiwi',        answer_text: 'Mi Hou Tao' }),
+    Card.create({ image_url: 'orange.jpg',      hint_text: 'Orange',      answer_text: 'Cheng Zhi' }),
+    Card.create({ image_url: 'pear.jpg',        hint_text: 'Pear',        answer_text: 'Li' }),
+    Card.create({ image_url: 'pineapple.jpg',   hint_text: 'Pineapple',   answer_text: 'Bo Luo' }),
+    Card.create({ image_url: 'plum.jpg',        hint_text: 'Plum',        answer_text: 'Mei Zi' }),
+    Card.create({ image_url: 'pomegranate.jpg', hint_text: 'Pomegranate', answer_text: 'Shi Liu' }),
+    Card.create({ image_url: 'strawberry.jpg',  hint_text: 'Strawberry',  answer_text: 'Cao Mei' }),
+    Card.create({ image_url: 'tomato.jpg',      hint_text: 'Tomato',      answer_text: 'Fan Qie' })
   ]
 })
 

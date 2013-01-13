@@ -4,11 +4,13 @@
 <% else %>
   <% if current_game.current_round_number == 0 %>
     <h1>Get ready...</h1>
+    <% content_for :head_tags do %><meta http-equiv="refresh" content="1"><% end %>
   <% else %>
-    <h1>Game <%= current_game.id %> is in play!</h1>
-    <h2>Round <%= current_game.current_round_number %></h2>
+    <h1>Game is in play!</h1>
+    <h2>Round <%= current_game.current_round_number %> / <%= current_game.number_of_rounds %>.</h2>
+    <h2><%= current_game.interval %> seconds per round</h2>
     <% content_for :head_tags do %>
-      <meta http-equiv="refresh" content="5">
+      <meta http-equiv="refresh" content="2">
     <% end %>
   <% end %>
 <% end %>
@@ -30,13 +32,14 @@
     <tr class="score-row">
       <td><%= student.full_name %></td>
       <% current_game.cardset.cards.each do |card| %>
-        <td><%= current_game.scores.select { |score| score.student == student && score.matchup.card == card }.map(&:points).sum %></td>
+        <% points = current_game.scores.select { |score| score.student == student && score.matchup.card == card }.map(&:points).sum %>
+        <td class="score score-<%= points %> any-score-<%= (points > 0).to_s %>"><%= points %></td>
       <% end %>
     </tr>
   <% end %>
 
   <tr>
-    <td>Words</td>
+    <td class="row-header">Words</td>
     <% current_game.cardset.cards.each do |card| %>
       <td class="image"><%= image_tag card.image_url %></td>
     <% end %>

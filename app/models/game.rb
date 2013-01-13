@@ -1,6 +1,6 @@
 class Game < ActiveRecord::Base
-  NUMBER_OF_ROUNDS = 5
-  ROUND_LENGTH_IN_SECONDS = 10
+  NUMBER_OF_ROUNDS = 10
+  ROUND_LENGTH_IN_SECONDS = 5
 
   has_many :participations
   has_many :students, through: :participations
@@ -54,6 +54,12 @@ class Game < ActiveRecord::Base
     save!
   end
 
+  def finish!
+    self.finished_at = Time.now
+    save!
+    annul_participation_shortcodes
+  end
+
   def started?
     started_at.present?
   end
@@ -93,6 +99,13 @@ class Game < ActiveRecord::Base
 
         round.matchups.create(student1: student1, student2: student2, card: card)
       end
+    end
+  end
+
+  def annul_participation_shortcodes
+    participations.each do |participation|
+      participation.shortcode = nil
+      participation.save!
     end
   end
 end

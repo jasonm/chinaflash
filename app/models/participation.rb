@@ -20,6 +20,6 @@ class Participation < ActiveRecord::Base
   private
 
   def set_shortcode
-    self.shortcode = (1..5).map { (1..9).to_a.shuffle.first.to_s }.join
+    self.shortcode = (1..4).map { (1..9).to_a.shuffle.first.to_s }.shuffle.join
   end
 end

@@ -16,7 +16,7 @@
 @import "bootstrap-responsive";
 
 body {
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 40px;
 }
 
@@ -39,16 +39,44 @@ body.current_matchups-show {
 }
 
 table.scoreboard {
-  @extend .table-bordered, .table-striped;
+  @extend .table-bordered;
 
-  font-size: 32px;
-  line-height: 150%;
+  zoom: 200%;
 
-  tr.score-row {
+  thead tr td {
+    text-align: center;
     font-weight: bold;
   }
 
+  td.row-header {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  td.score {
+    text-align: center;
+    width: 25px;
+  }
+
+  font-size: 18px;
+  line-height: 150%;
+
+  tr.score-row {
+    td { text-align: left; }
+    td.score { text-align: center; }
+  }
+
   td.image img {
-    max-height: 50px;
+    width: 25px;
+  }
+
+  td.any-score-true {
+    background-color: #6e6;
+    color: #060;
+  }
+
+  td.any-score-false {
+    background-color: #e66;
+    color: #600;
   }
 }
