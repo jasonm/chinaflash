@@ -3,7 +3,7 @@
   <%= link_to 'Start a new game...', new_game_path, class: 'btn btn-primary' %>
 <% else %>
   <% if current_game.current_round_number == 0 %>
-    <h1>Get ready...</h1>
+    <h1>Get ready (<%= current_game.interval %> seconds)...</h1>
     <% content_for :head_tags do %><meta http-equiv="refresh" content="1"><% end %>
   <% else %>
     <h1>Game is in play!</h1>
